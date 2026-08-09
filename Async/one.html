@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chai aur code</title>
+  </head>
+  <body style="background-color: #212121; color: #fff">
+    <h1>Chai aur code</h1>
+    <button id="stop">Stop</button>
+  </body>
+  <script>
+    /* one time Execution */
+    setTimeout(function () {
+      console.log("Hitesh");
+    }, 2000);
+
+    const sayYash = () => {
+      console.log("Yash");
+    };
+    setTimeout(sayYash, 2000); // We to pass the reference
+
+    const changeText = () => {
+      document.querySelector("h1").innerHTML = "Best Javascript Series";
+    };
+    const changeMe = setTimeout(changeText, 2000);
+
+    /* Stop setTimeout */
+    document.getElementById("stop").addEventListener("click", () => {
+        clearTimeout(changeMe)
+        console.log("STOPPED"); 
+    });
+  </script>
+</html>
